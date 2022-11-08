@@ -1,0 +1,8 @@
+.header-menu {
+	background-color: black;
+	color: white;
+}
+
+.header-navbar ul li a {
+	text-decoration: none;
+}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<h2>Edit Employee</h2>
+{% endblock title %}
+
+{% block content %}
+
+<h3>{{ employee }}</h3>
+
+<form method="post" action="{% url 'employee:edit-employee' employee.id %}">
+	{% csrf_token %}
+	Email:<br>
+	<input type="email" name="email" placeholder="Email" value="{{ profile.email }}"/>
+	<br>
+	Age:<br>
+	<input type="number" name="age" placeholder="Age" value="{{ profile.age }}" />
+	<br>
+	Phone:<br>
+	<input type="text" name="phone" placeholder="Phone" value="{{ profile.phone }}"/>
+	<br>
+	Address:<br>
+	<input type="text" name="address" placeholder="Address" value="{{ profile.address }}" />
+	<br>
+	<br>
+	<input type="submit" class="btn btn-primary" name="submit" value="Change Profile"/>
+</form>
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+	<h2>Add new employee</h2>
+{% endblock %}
+
+{% block content %}
+<form method="post" action="{% url 'employee:create-employee' %}" >
+	{% csrf_token %}
+	<label>First Name:</label><br>
+	<input type="text" name="first_name" placeholder="First Name"/>
+	<br>
+	<label>Last Name:</label><br>
+	<input type="text" name="last_name" placeholder="Last Name"/>
+	<br>
+	<br>
+	<input type="submit" class="btn btn-primary" value="Submit">
+</form>
+{% endblock content %}
+
+
+
